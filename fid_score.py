@@ -209,7 +209,8 @@ def _compute_statistics_of_path(path, model, batch_size, dims, cuda):
         f.close()
     else:
         path = pathlib.Path(path)
-        files = list(path.glob('*.jpg')) + list(path.glob('*.png'))
+        # I use subdir so I change it
+        files = list(path.glob('*/*.jpg')) + list(path.glob('*/*.png'))
 
         imgs = np.array([imread(str(fn)).astype(np.float32) for fn in files])
 
