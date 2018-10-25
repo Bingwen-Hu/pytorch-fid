@@ -1,5 +1,10 @@
 # Fréchet Inception Distance (FID score) in PyTorch
 
+Market1501
+```
+bash demo.sh 
+```
+
 This is a port of the official implementation of [Fréchet Inception Distance](https://arxiv.org/abs/1706.08500) to PyTorch. 
 See [https://github.com/bioinf-jku/TTUR](https://github.com/bioinf-jku/TTUR) for the original implementation using Tensorflow.
 
