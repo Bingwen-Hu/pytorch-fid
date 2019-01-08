@@ -100,11 +100,12 @@ def get_activations(images, model, batch_size=64, dims=2048,
         end = start + batch_size
 
         batch = torch.from_numpy(images[start:end]).type(torch.FloatTensor)
-        batch = Variable(batch, volatile=True)
+        #batch = Variable(batch, volatile=True)
         if cuda:
             batch = batch.cuda()
 
-        pred = model(batch)[0]
+        with torch.no_grad():
+            pred = model(batch)[0]
 
         # If model output is not scalar, apply global spatial average pooling.
         # This happens if you choose a dimensionality not equal 2048.
